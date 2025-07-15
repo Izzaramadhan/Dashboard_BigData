@@ -1,68 +1,112 @@
 # ⚡ Dashboard Prediksi Permintaan Listrik - Big Data Final Project
 
-Proyek ini merupakan implementasi analisis data dan prediksi permintaan listrik di Inggris & Wales menggunakan model **Regresi Linier Berganda**, dilengkapi dengan dashboard interaktif berbasis **Streamlit**.
+Proyek ini merupakan implementasi **analisis data dan prediksi permintaan listrik** di Inggris & Wales menggunakan model **Regresi Linier Berganda**, dikemas dalam dashboard interaktif berbasis **Streamlit**.
 
 ## 📁 Struktur Proyek
 
-```
 fpbigdata/
-├── historic_demand_2000 (1).csv
-├── streamlit_app_modular_fixed.py
-├── venv/
-└── README.md
-```
+├── historic_demand_2000 (1).csv # Dataset asli
+├── pages/
+│ ├── 1_Data_Collection.py # Halaman pengumpulan dan pembersihan data
+│ ├── 2_EDA.py # Exploratory Data Analysis
+│ ├── 3_Korelasi.py # Analisis Korelasi antar fitur
+│ ├── 4_Model.py # Pelatihan model regresi
+│ ├── 5_Evaluasi.py # Evaluasi kinerja model
+│ └── 6_Prediksi.py # Prediksi manual dengan input user
+├── streamlit_app.py # Halaman landing dashboard
+├── requirements.txt # Daftar dependensi
+└── README.md # Dokumentasi proyek
+
+markdown
+Salin
+Edit
 
 ## 📊 Fitur Dashboard
 
-Dashboard terbagi menjadi beberapa halaman interaktif:
+Dashboard terbagi menjadi beberapa halaman (navigasi via sidebar):
 
-### A. EDA dan Visualisasi Data
-- Tinjauan data mentah
-- Distribusi permintaan listrik
-- Scatter plot Wind vs Solar
-- Rata-rata energi vs permintaan
+### A. Data Collection
+- Penjelasan sumber dataset
+- Deskripsi fitur dan target
+- Preview dan opsi unduh dataset (CSV)
 
-### B. Analisis Korelasi
-- Heatmap interaktif antar fitur
-- Korelasi statistik antar variabel
+### B. EDA & Visualisasi
+- Statistik ringkas permintaan listrik
+- Histogram distribusi demand
+- Scatter plot wind vs solar
+- Rata-rata output vs permintaan
 
-### C. Regresi Linier Berganda
-- Pelatihan model prediksi
-- Evaluasi dengan MSE, RMSE, MAE, dan R²
-- Visualisasi Prediksi vs Aktual
+### C. Analisis Korelasi
+- Heatmap interaktif (Plotly)
+- Heatmap statik (Seaborn)
+- Interpretasi kekuatan korelasi fitur
 
-### D. Prediksi Manual
-- Input manual untuk semua fitur
-- Hasil prediksi permintaan listrik secara instan
+### D. Model Regresi Linier
+- Pembagian data train-test
+- Pelatihan model regresi
+- Koefisien tiap fitur
+
+### E. Evaluasi Model
+- MAE, RMSE, MSE, dan R²
+- Visualisasi Prediksi vs Aktual (Line & Scatter)
+
+### F. Prediksi Manual
+- Input semua fitur secara manual via sidebar
+- Prediksi realtime + error bar (berdasarkan RMSE)
+- Grafik batang + batas prediksi
+
+---
 
 ## ⚙️ Cara Menjalankan
 
 1. **Clone repository**:
    ```bash
-   git clone https://github.com/username/namarepo.git
-   cd namarepo
-   ```
+   git clone https://github.com/username/fpbigdata.git
+   cd fpbigdata
+Aktifkan virtual environment:
 
-2. **Buat virtual environment**:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # Windows
-   ```
+bash
+Salin
+Edit
+python -m venv venv
+venv\Scripts\activate  # Untuk Windows
+# atau
+source venv/bin/activate  # Untuk macOS/Linux
+Instal dependensi:
 
-3. **Install dependensi**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+bash
+Salin
+Edit
+pip install -r requirements.txt
+Jalankan aplikasi Streamlit:
 
-4. **Jalankan dashboard**:
-   ```bash
-   streamlit run streamlit_app.py
-   ```
+bash
+Salin
+Edit
+streamlit run streamlit_app.py
+📦 Requirements
+Daftar dependensi yang digunakan:
 
-## 📦 Requirements
+nginx
+Salin
+Edit
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+plotly
+statsmodels
+Semua tercantum di dalam requirements.txt.
 
-Lihat `requirements.txt` untuk dependensi.
+📂 Dataset
+📄 File: historic_demand_2000 (1).csv
 
-## 📜 Lisensi
+🌐 Sumber: Kaggle Datasets
 
-Proyek ini untuk keperluan akademik. Gunakan dan modifikasi sesuai kebutuhan pembelajaran.
+Fitur: Embedded wind/solar generation, transfer antar negara, demand
+
+📜 Lisensi
+Proyek ini dibuat untuk keperluan akademik dalam mata kuliah Big Data & Predictive Analytics.
+Boleh dimodifikasi dan digunakan kembali untuk pembelajaran.
