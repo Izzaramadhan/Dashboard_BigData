@@ -17,10 +17,6 @@ fpbigdata/
 ├── requirements.txt # Daftar dependensi
 └── README.md # Dokumentasi proyek
 
-markdown
-Salin
-Edit
-
 ## 📊 Fitur Dashboard
 
 Dashboard terbagi menjadi beberapa halaman (navigasi via sidebar):
@@ -65,31 +61,21 @@ Dashboard terbagi menjadi beberapa halaman (navigasi via sidebar):
    cd fpbigdata
 Aktifkan virtual environment:
 
-bash
-Salin
-Edit
 python -m venv venv
 venv\Scripts\activate  # Untuk Windows
 # atau
 source venv/bin/activate  # Untuk macOS/Linux
 Instal dependensi:
 
-bash
-Salin
-Edit
+
 pip install -r requirements.txt
 Jalankan aplikasi Streamlit:
 
-bash
-Salin
-Edit
+
 streamlit run streamlit_app.py
 📦 Requirements
 Daftar dependensi yang digunakan:
 
-nginx
-Salin
-Edit
 streamlit
 pandas
 numpy
