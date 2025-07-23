@@ -105,7 +105,7 @@ Tercantum lengkap dalam file `requirements.txt`.
 
 ## 📂 Dataset
 
-- 📄 File: `historic_demand_2000 (1).csv`  
+- 📄 File: `historic_demand_2024.csv`  
 - 🌐 Sumber: [Kaggle Datasets](https://www.kaggle.com/datasets)  
 - 🧾 Fitur: Embedded wind/solar generation, transfer listrik, demand
 
